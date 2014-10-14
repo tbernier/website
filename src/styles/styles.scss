@@ -1,7 +1,10 @@
-$font-stack:    Helvetica, sans-serif;
-$primary-color: #333;
+@import "knacss";
 
 body {
-  font: 100% $font-stack;
-  color: $primary-color;
+	background-color: #fff;
+}
+.container {
+	background-color: rgba(0, 0, 0, 0.03);
+	box-shadow: 0 2px 6px rgba(100, 100, 100, .8);
+	margin-top: 80px;
 }
