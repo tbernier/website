@@ -3,20 +3,51 @@
 $blue: #1485CC;
 $dark-blue: #0971B2;
 
-body {
+body{
 	background-color: #fff;
 }
-.container {
-	background-color: rgba(0, 0, 0, 0.03);
+.container{
+	background-color: #f8f8f8;
 	box-shadow: 0 2px 6px rgba(100, 100, 100, .8);
 	margin-bottom: 80px;
 	margin-top: 80px;
+	position: relative;
+	z-index: 20;
 }
 a{
 	color: $blue;
 }
 a:hover{
 	color: $dark-blue;
+}
+.container3d{
+	height: 200px;
+	padding: 0 0 10px 10px;
+	perspective: 800px;
+	width: 200px;
+}
+.picture{
+	height: 100%;
+	position: absolute;
+	transform-style: preserve-3d;
+	transition: transform 1s;
+	width: 100%;
+}
+.picture div{
+	backface-visibility: hidden;
+	height: 100%;
+	position: absolute;
+	width: 100%;
+}
+.picture .front{
+	background: red;
+}
+.picture .back{
+	background: blue;
+	transform: rotateY(-180deg);
+}
+.picture:hover{
+	transform: rotateY(-180deg);
 }
 
 .download a:before{
