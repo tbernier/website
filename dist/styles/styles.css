@@ -1914,41 +1914,6 @@ a:hover {
   color: #0971B2;
 }
 
-.container3d {
-  height: 200px;
-  padding: 0 0 10px 10px;
-  perspective: 800px;
-  width: 200px;
-}
-
-.picture {
-  height: 100%;
-  position: absolute;
-  transform-style: preserve-3d;
-  transition: transform 1s;
-  width: 100%;
-}
-
-.picture div {
-  backface-visibility: hidden;
-  height: 100%;
-  position: absolute;
-  width: 100%;
-}
-
-.picture .front {
-  background: red;
-}
-
-.picture .back {
-  background: blue;
-  transform: rotateY(-180deg);
-}
-
-.picture:hover {
-  transform: rotateY(-180deg);
-}
-
 .download a:before {
   background-repeat: no-repeat;
   content: "";
