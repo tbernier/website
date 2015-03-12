@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
 
+	grunt.loadNpmTasks('grunt-autoprefixer');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-imagemin');
@@ -28,6 +29,15 @@ module.exports = function(grunt) {
 			},
 			dev: {}
 		},
+		autoprefixer: {
+			options: {
+				browsers: ['last 2 versions', 'ie 8', 'ie 9'],
+				map: true
+			},
+            dist: {
+                src: 'dist/styles/styles.css'
+            }
+        },
 		concat: {
 			options: {
 				separator: ';'
@@ -100,6 +110,9 @@ module.exports = function(grunt) {
 	grunt.registerTask('scripts:dev', ['concat:compile']);
 	grunt.registerTask('scripts:dist', ['uglify:compile']);
 
-	grunt.registerTask('styles:dev', ['sass:dist']);
-	grunt.registerTask('styles:dist', ['sass:dist']);
+	grunt.registerTask('styles:dev', ['sass:dist', 'autoprefixer:dist']);
+	grunt.registerTask('styles:dist', ['sass:dist', 'autoprefixer:dist']);
+
+	grunt.registerTask('prefix', ['autoprefixer:dist']);
+
 }
