@@ -1372,6 +1372,11 @@ a:hover {
   color: #0971B2;
 }
 
+.download a {
+  display: inline-block;
+  margin: 0 10px 10px;
+}
+
 .download a:before {
   background-repeat: no-repeat;
   content: "";
@@ -1380,10 +1385,6 @@ a:hover {
   padding-right: 5px;
   vertical-align: bottom;
   width: 24px;
-}
-
-.pdf {
-  margin-right: 20px;
 }
 
 .pdf:before {
